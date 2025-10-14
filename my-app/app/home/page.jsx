@@ -9,6 +9,7 @@ import {
   Shield,
   Phone,
 } from 'lucide-react';
+import Navbar from '../component/Navbar/Navbar';
 
 export default function AgroStackHomepage() {
   const [animatedNumbers, setAnimatedNumbers] = useState({
@@ -31,6 +32,9 @@ export default function AgroStackHomepage() {
 
   return (
     <div className="min-h-screen bg-black text-white">
+      {/* Navbar */}
+      <Navbar />
+
       {/* Hero Banner Section */}
       <div className="relative h-screen">
         {/* Background Image */}
@@ -52,44 +56,8 @@ export default function AgroStackHomepage() {
           .glow-effect { animation: glow 3s ease-in-out infinite; }
         `}</style>
 
-        {/* Header */}
-        <header className="relative z-10 flex justify-between items-center px-6 md:px-12 py-6">
-          <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-green-500 to-green-600 rounded-full flex items-center justify-center glow-effect">
-              <span className="text-black font-extrabold text-lg">A</span>
-            </div>
-            <div>
-              <span className="text-2xl font-semibold tracking-wide">AgroStack</span>
-              <div className="text-xs text-green-400">Africa's #1 Platform</div>
-            </div>
-          </div>
-
-          <div className="flex items-center space-x-4">
-            <div className="hidden md:flex items-center space-x-4 text-sm text-gray-300">
-              <span className="flex items-center space-x-1">
-                <Globe className="w-4 h-4 text-green-400" />
-                <span>{animatedNumbers.countries} Countries</span>
-              </span>
-              <span className="flex items-center space-x-1">
-                <Users className="w-4 h-4 text-green-400" />
-                <span>{animatedNumbers.farmers.toLocaleString()}+ Farmers</span>
-              </span>
-            </div>
-
-            {/* Header Buttons - Hidden on small screens */}
-            <div className="hidden md:flex gap-3">
-              <button className="bg-green-500 hover:bg-green-600 text-black font-medium px-5 py-2 rounded-md transition-colors text-sm">
-                Post Produce
-              </button>
-              <button className="bg-white/10 hover:bg-white/20 border border-green-500/30 text-white font-medium px-5 py-2 rounded-md transition-colors text-sm">
-                See & Buy Produce
-              </button>
-            </div>
-          </div>
-        </header>
-
         {/* Hero Content */}
-        <main className="relative z-10 flex flex-col justify-center items-center text-center px-6 md:px-10 py-10 md:py-20">
+        <main className="relative z-10 flex flex-col justify-center items-center text-center px-6 md:px-10 py-10 md:py-20 pt-40 md:pt-48">
           <h1 className="text-5xl sm:text-5xl md:text-7xl font-bold tracking-wider mb-6">
             A Complete Agriculture <br />
             <span className="text-green-500">Ecosystem</span>
@@ -99,7 +67,7 @@ export default function AgroStackHomepage() {
             Trade, secure, import, export — everything agriculture in one powerful platform.
           </p>
 
-          {/* Mobile Action Buttons - Show only on small screens */}
+          {/* Mobile Action Buttons */}
           <div className="md:hidden flex flex-col gap-3 mb-10 w-full max-w-xs mx-auto">
             <button className="bg-green-500 hover:bg-green-600 text-black font-medium px-6 py-3 rounded-md transition-colors text-base w-full">
               Post Produce
@@ -109,7 +77,7 @@ export default function AgroStackHomepage() {
             </button>
           </div>
 
-          {/* Search Bar - Hidden on small screens */}
+          {/* Search Bar */}
           <div className="hidden md:block w-full max-w-2xl mx-auto mb-10">
             <div className="relative">
               <input
@@ -125,25 +93,8 @@ export default function AgroStackHomepage() {
             </div>
           </div>
 
-          {/* USSD Access */}
-          <div className="flex justify-center mb-8">
-            <div className="bg-gradient-to-r from-green-500/20 to-emerald-500/20 backdrop-blur-md border border-green-500/40 rounded-xl px-6 py-4 flex items-center space-x-4">
-              <div className="flex items-center space-x-2">
-                <Phone className="w-4 h-4 text-green-400" />
-                <span className="text-sm text-gray-300">No Internet?</span>
-              </div>
-              <div className="border-l border-green-500/30 pl-4">
-                <div className="text-center">
-                  <p className="text-xs text-gray-400">Dial</p>
-                  <p className="text-lg font-bold text-green-400">*347*2476#</p>
-                </div>
-              </div>
-            </div>
-          </div>
         </main>
       </div>
-
-      {/* marketplace */}
     </div>
   );
 }
