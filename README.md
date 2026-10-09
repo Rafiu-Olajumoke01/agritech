@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Agritech
 
-## Getting Started
+Agritech is a platform that helps farmers in rural areas sell their produce even when they have no internet connection.
 
-First, run the development server:
+Many farmers have only a basic phone and weak or no mobile data. Agritech lets them post their products by **SMS**. The platform then receives the message, turns it into a listing, and displays it on the website for buyers to see. It is designed to act as a middleman between farmers and final consumers.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## How it works
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. A farmer sends a text message describing what they are selling.
+2. The backend receives and validates the message.
+3. A product listing is created from it.
+4. The listing appears on the website for buyers to browse.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+## Tech stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Frontend:** JavaScript (this repository)
+- **Backend:** Python, Django (see the `agritech-backend` repository)
+- **Messaging:** SMS, connected to the backend through a webhook
 
-## Learn More
+## Current status
 
-To learn more about Next.js, take a look at the following resources:
+- SMS message receiving and parsing is built and has been tested with simulated SMS requests.
+- Connecting to a live SMS gateway is planned for the pilot stage.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Planned
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- Buyer ordering and order confirmation
+- Agents who help farmers confirm and manage listings
+- Payments and delivery coordination
+- A pilot with one crop in one region
 
-## Deploy on Vercel
+## Related repository
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- [agritech-backend](https://github.com/Rafiu-Olajumoke01/agritech-backend): the Django backend that receives SMS, creates listings, and serves the data
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Author
+
+Built by **Jummy**, a backend-focused software engineer working with Python, Django, Celery, Redis, and PostgreSQL.
+
+GitHub: [Rafiu-Olajumoke01](https://github.com/Rafiu-Olajumoke01)
